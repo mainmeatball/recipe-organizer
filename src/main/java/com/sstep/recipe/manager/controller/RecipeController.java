@@ -18,7 +18,7 @@ public class RecipeController {
     @PostMapping("/recipes/new")
     public String saveRecipe(@RequestBody final RecipeVo recipe) {
         System.out.println(recipe);
-        return "main-page";
+        return "hello";
     }
 
     @GetMapping(value = "/recipes")
