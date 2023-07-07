@@ -12,7 +12,7 @@ import java.util.List;
 @Service
 public class RecipeService {
 
-    private RecipeDao recipeDao;
+    private final RecipeDao recipeDao;
 
     @Autowired
     public RecipeService(final RecipeDao recipeDao) {
@@ -30,4 +30,6 @@ public class RecipeService {
     public Recipe save(final Recipe recipe) {
         return recipeDao.save(recipe);
     }
+
+    public void remove(final long id) { recipeDao.remove(id);}
 }

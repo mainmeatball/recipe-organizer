@@ -30,4 +30,9 @@ public class RecipeDao {
         em.persist(recipe);
         return recipe;
     }
+
+    public void remove(final long id) {
+        final Recipe recipe = findById(id);
+        em.remove(recipe);
+    }
 }

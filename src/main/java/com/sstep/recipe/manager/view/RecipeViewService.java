@@ -50,6 +50,11 @@ public class RecipeViewService {
         return toVo(savedRecipe);
     }
 
+    @Transactional(propagation = Propagation.REQUIRED)
+    public void remove(final long id) {
+        recipeService.remove(id);
+    }
+
     private Recipe toEntity(final RecipeVo recipeVo) {
         final Recipe recipe = new Recipe();
         recipe.setId(recipeVo.getId());

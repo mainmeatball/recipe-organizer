@@ -29,6 +29,11 @@ public class RecipeController {
         return recipeViewService.findAll();
     }
 
+    @DeleteMapping(value = "/recipe")
+    public void deleteRecipe(@RequestParam("id") final long id) {
+        recipeViewService.remove(id);
+    }
+
     @GetMapping(value = "/recipe")
     public @ResponseBody RecipeVo getRecipe(@RequestParam("id") final long id) {
         return recipeViewService.findById(id);
