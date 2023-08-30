@@ -10,7 +10,7 @@ open class RecipeController @Autowired constructor(
     private val recipeViewService: RecipeViewService
 ) {
 
-    @PostMapping("/recipes")
+    @PostMapping(value = ["/recipes"])
     open fun saveRecipe(@RequestBody recipeVo: RecipeVo): RecipeVo {
         return recipeViewService.save(recipeVo)
     }

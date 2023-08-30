@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonProperty
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 data class RecipeStepVo @JsonCreator constructor(
-    val text: String,
-    val order: Int,
+    val order: Int? = null,
+    val text: String? = null,
+    val imageId: String? = null
 )

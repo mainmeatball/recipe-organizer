@@ -14,6 +14,6 @@ data class RecipeVo @JsonCreator constructor(
     val description: String? = null,
     val recipeType: RecipeType? = null,
     val recipePreviewId: String? = null,
-    val ingredients: List<IngredientVo> = emptyList(),
-    val steps: List<RecipeStepVo> = emptyList()
+    val ingredients: List<IngredientVo>? = emptyList(),
+    val steps: List<RecipeStepVo>? = emptyList()
 )

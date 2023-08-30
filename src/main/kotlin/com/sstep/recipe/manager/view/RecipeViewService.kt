@@ -34,7 +34,7 @@ open class RecipeViewService @Autowired constructor(
                 description = recipeVo.description
                 recipeType = recipeVo.recipeType
                 recipeData = RecipeData(recipeVo)
-                recipe
+                previewId = recipeVo.recipePreviewId
             }
         } else {
             recipe = recipeVo.toEntity()

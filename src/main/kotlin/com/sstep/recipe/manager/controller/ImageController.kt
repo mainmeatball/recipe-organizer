@@ -16,12 +16,12 @@ open class ImageController @Autowired constructor(
 ) {
 
     @GetMapping(value = ["/image"])
-    open fun getImage(@RequestParam("id") id: String): String? {
+    open fun getImage(@RequestParam("id") id: String): ByteArray? {
         return imageService.getFile(id).content?.data?.toBase64()
     }
 
-    private fun ByteArray.toBase64(): String =
-        String(Base64.getEncoder().encode(this))
+    private fun ByteArray.toBase64(): ByteArray =
+        Base64.getEncoder().encode(this)
 
     @PostMapping("/uploadImages")
     open fun uploadImages(@RequestParam file: MultipartFile): String? {
